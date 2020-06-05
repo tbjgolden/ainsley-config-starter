@@ -1,4 +1,4 @@
-# `typescript-library-starter`
+# `tbjgolden/typescript-library-starter`
 
 This starter enables simple creation of libraries using TypeScript.
 

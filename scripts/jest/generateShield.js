@@ -17,23 +17,31 @@ const getColor = (percentage) => {
   }
 }
 
-const generateSVG = (percentage) =>
-  `
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="104" height="20">
+const generateSVG = (percentage) => {
+  const short = parseInt(percentage) < 100
+  return `
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${
+      short ? 101 : 104
+    }" height="20">
       <g shape-rendering="crispEdges">
         <rect width="61" height="20" fill="#555"/>
-        <rect x="61" width="43" height="20" fill="${getColor(
-          parseInt(percentage)
-        )}"/>
+        <rect x="61" width="${short ? 40 : 43}" height="20" fill="${getColor(
+    parseInt(percentage)
+  )}"/>
       </g>
       <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110">
         <text x="315" y="140" transform="scale(.1)" textLength="510">coverage</text>
-        <text x="815" y="140" transform="scale(.1)" textLength="330">${percentage}</text>
+        <text x="${
+          short ? 815 : 845
+        }" y="140" transform="scale(.1)" textLength="${
+    short ? 270 : 330
+  }">${percentage}</text>
       </g>
     </svg>
   `
     .trim()
     .replace(/\n\s*/g, '')
+}
 
 const calcPercentage = () => {
   let percentage = 'n/a'

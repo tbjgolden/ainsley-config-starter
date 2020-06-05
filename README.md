@@ -1,7 +1,6 @@
 # `ainsley-config-starter`
 
 [![npm version](https://img.shields.io/npm/v/ainsley-config-starter.svg?style=flat-square)](https://www.npmjs.com/package/ainsley-config-starter)
-[![npm downloads](https://img.shields.io/npm/dm/ainsley-config-starter.svg?style=flat-square)](https://www.npmjs.com/package/ainsley-config-starter)
 ![coverage](/scripts/jest/shield.svg)
 
 >

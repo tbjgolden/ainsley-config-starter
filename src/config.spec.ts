@@ -3,14 +3,23 @@ import { parse } from 'css-tree'
 import { config, options } from './config'
 
 describe('config tests', () => {
+  test('generates without throwing', () => {
+    let results = ''
+    const gen = () => {
+      results = generate(config, options)
+    }
+    expect(gen).not.toThrow()
+    expect(results).not.toBe('')
+  })
+
   // not applicable if not including some co-dependent options
-  test('no invalid css nodes when parsed with built-in options', () => {
+  test('no invalid css nodes when parsed with associated options', () => {
     expect(getErrors(generate(config, options))).toEqual([])
   })
 
   // not applicable if certain options are required to make it work
   // note that removing this check makes it break on unexpected class name formats
-  test('no invalid css nodes when parsed with built-in options', () => {
+  test('no invalid css nodes when parsed with default options', () => {
     expect(getErrors(generate(config))).toEqual([])
   })
 
@@ -20,7 +29,7 @@ describe('config tests', () => {
   })
 
   // variables without modifiers makes your config less flexible
-  test('no variables without modifiers', () => {
+  test.skip('no variables without modifiers', () => {
     expect(getUnmoddedVariables(config)).toEqual([])
   })
 
