@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "run-s clean compile bundle",
-    "bundle": "rollup -c",
+    "bundle": "rollup -c && node scripts/generateJSON.js",
     "check:format": "prettier --list-different \"**/*.{js,ts,tsx}\"",
     "check:types": "tsc --noEmit",
     "clean": "run-p clean:*",

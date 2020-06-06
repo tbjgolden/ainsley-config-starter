@@ -209,46 +209,46 @@ export const config: Ainsley = {
         }
       ],
       variables: {
-        overflow: {
+        '?overflow': {
           h: 'hidden',
           s: 'scroll',
           a: 'auto',
           v: 'visible'
         },
-        flexCrossAxes: {
+        '?flexCrossAxes': {
           ai: 'align-items',
           as: 'align-self',
           ac: 'align-content'
         },
-        flexCrossAxis: {
+        '?flexCrossAxis': {
           fs: 'flex-start',
           fe: 'flex-end',
           c: 'center',
           b: 'baseline',
           s: 'stretch'
         },
-        flexChange: {
+        '?flexChange': {
           0: '0',
           1: '1',
           2: '2',
           x: '11111111'
         },
-        flexBasis: {
+        '?flexBasis': {
           0: '0%',
           a: 'auto',
           p: '100%'
         },
-        xLoc: {
+        '?xLoc': {
           l: 'left',
           r: 'right',
           c: 'center'
         },
-        yLoc: {
+        '?yLoc': {
           t: 'top',
           b: 'bottom',
           c: 'center'
         },
-        scalar: {
+        '?scalar': {
           w: 'width',
           xw: 'max-width',
           nw: 'min-width',
@@ -257,13 +257,13 @@ export const config: Ainsley = {
           nh: 'min-height',
           bor: 'border-radius'
         },
-        direction: {
+        '?direction': {
           t: 'top',
           l: 'left',
           r: 'right',
           b: 'bottom'
         },
-        colors: {
+        '?colors': {
           W: 'white',
           B: 'black',
           TR: 'transparent',
@@ -297,7 +297,7 @@ export const config: Ainsley = {
           MSG: '#3d70b2',
           LIGHTMSG: '#ebf0f7'
         },
-        typeScale: {
+        '?typeScale': {
           h1: '72px',
           h2: '48px',
           h3: '32px',
@@ -308,7 +308,7 @@ export const config: Ainsley = {
           sm: '14px',
           xs: '12px'
         },
-        scale: {
+        '?scale': {
           0: '0',
           1: '1px',
           2: '2px',

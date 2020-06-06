@@ -29,7 +29,7 @@ describe('config tests', () => {
   })
 
   // variables without modifiers makes your config less flexible
-  test.skip('no variables without modifiers', () => {
+  test('no variables without modifiers', () => {
     expect(getUnmoddedVariables(config)).toEqual([])
   })
 

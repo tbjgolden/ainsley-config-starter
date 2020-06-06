@@ -2248,9 +2248,9 @@ aggregate-error@^3.0.0:
     indent-string "^4.0.0"
 
 ainsley@^1.2.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/ainsley/-/ainsley-1.2.1.tgz#a051af478d6282118956019ea63de18f1526a043"
-  integrity sha512-jvKq36K4arYcnNZIXLznIPAlBKk44OKFJ+/Evv29vkunKJ3WzZPe4Hbv0Q+Qh1z0tfFysMdofCXwmSagAiJ2gA==
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/ainsley/-/ainsley-1.2.4.tgz#b0e12b2cc976be76eb07d7aa5a74c360a1ae7df5"
+  integrity sha512-siNM4xtiKISThCklOapmpiYyLwvoFxt/WPj0LVCLhVBQ3PldHrtPcQ0xOdb6ED9TiTcJrIjTke/0jM3r4vlymA==
   dependencies:
     "@babel/runtime" "^7.7.7"
     babel-plugin-macros "^2.8.0"
