@@ -356,5 +356,18 @@ export const config: Ainsley = {
 }
 
 export const options: Partial<AinsleyGenerateOptions> = {
-  //
+  addVariationToSelector: (selector, variationAbbreviation) =>
+    variationAbbreviation + '-' + selector,
+  addPropertyToSelector: (selector, propertyAbbreviation) =>
+    selector + propertyAbbreviation.toLowerCase(),
+  addValueToSelector: (selector, valueAbbreviation) =>
+    selector + valueAbbreviation.toUpperCase(),
+  abbreviateProperty: (propertyName) => [
+    propertyName
+      .split('-')
+      .map((word) => word.charAt(0))
+      .join('')
+      .toLowerCase(),
+    propertyName.toLowerCase()
+  ]
 }

@@ -258,7 +258,22 @@
         variations: [[['o', ':hover'], ['o', ':focus'], ['o', ':active']], [['s', '@media(min-width:384px)'], ['m', '@media(min-width:768px)'], ['l', '@media(min-width:1024px)'], ['x', '@media(min-width:1536px)']]]
       }]
     };
-    var options = {};
+    var options = {
+      addVariationToSelector: function addVariationToSelector(selector, variationAbbreviation) {
+        return variationAbbreviation + '-' + selector;
+      },
+      addPropertyToSelector: function addPropertyToSelector(selector, propertyAbbreviation) {
+        return selector + propertyAbbreviation.toLowerCase();
+      },
+      addValueToSelector: function addValueToSelector(selector, valueAbbreviation) {
+        return selector + valueAbbreviation.toUpperCase();
+      },
+      abbreviateProperty: function abbreviateProperty(propertyName) {
+        return [propertyName.split('-').map(function (word) {
+          return word.charAt(0);
+        }).join('').toLowerCase(), propertyName.toLowerCase()];
+      }
+    };
 
     exports.config = config;
     exports.options = options;
