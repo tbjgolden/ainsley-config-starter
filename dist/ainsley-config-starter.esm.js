@@ -1,12 +1,12 @@
 var config = {
   children: ['*,::after,::before{box-sizing:border-box;outline-offset:0;border:0 solid}[type=button],[type=date],[type=datetime-local],[type=email],[type=file],[type=image],[type=month],[type=number],[type=password],[type=reset],[type=search],[type=submit],[type=tel],[type=text],[type=time],[type=url],[type=week],a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,button,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,time,tt,u,ul,var,video{margin:0;padding:0;border:0 solid;background:0 0;font:inherit;color:inherit;text-align:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html{overflow-y:scroll;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote::after,blockquote::before,q::after,q::before{content:none}textarea{resize:vertical;overflow:auto}applet,canvas,img,object,svg,video{max-width:100%;height:auto}', {
-    children: [['', [['{scalar}', '{scale}']]], ['', [['{direction}', '{scale}']]], ['', [['{flexCrossAxes}', '{flexCrossAxis}']]], ['c', [['color', '{colors}']]], ['bac', [['background-color', '{colors}']]], ['fosz', [['font-size', '{typeScale}'], ['line-height', 1.2]]], ['pa', [['padding', '{scale}']]], ['pa', [['padding-{direction}', '{scale}']]], ['bap', [['background-position', '{xLoc} {yLoc}']]], ['bo', [['border-{direction}', '{scale} solid {colors}']]], ['fl', [['flex', '{flexChange} {flexChange} {flexBasis}']]], ['ov', [['overflow', '{overflow} {overflow}']]], ['Display', {
+    children: [['', [['{scalar}', '{scale}']]], ['', [['{direction}', '{scale}']]], ['', [['{flexCrossAxes}', '{flexCrossAxis}']]], ['c', [['color', '{colors}']]], ['bac', [['background-color', '{colors}']]], ['fosz', [['font-size', '{headerTypeScale}'], ['line-height', 1.2]]], ['fosz', [['font-size', '{copyTypeScale}'], ['line-height', 1.3]]], ['pa', [['padding', '{scale}']]], ['pa', [['padding-{direction}', '{scale}']]], ['bap', [['background-position', '{xLoc} {yLoc}']]], ['bo', [['border-{direction}', '{scale} solid {colors}']]], ['fl', [['flex', '{flexChange} {flexChange} {flexBasis}']]], ['ov', [['overflow', '{overflow} {overflow}']]], ['Display', {
       i: 'inline',
       b: 'block',
-      fx: 'flex',
+      fl: 'flex',
       n: 'none',
       ib: 'inline-block',
-      ifx: 'inline-flex'
+      ifl: 'inline-flex'
     }], ['Text-Decoration', {
       l: 'line-through',
       u: 'underline',
@@ -80,7 +80,7 @@ var config = {
       se: 'space-evenly'
     }], ['Line-Height', {
       B: 1,
-      T: 1.2,
+      H: 1.2,
       C: 1.3
     }], ['FOnt-Weight', {
       N: 400,
@@ -208,12 +208,14 @@ var config = {
         MSG: '#3d70b2',
         LIGHTMSG: '#ebf0f7'
       },
-      '?typeScale': {
+      '?headerTypeScale': {
         h1: '72px',
         h2: '48px',
         h3: '32px',
         h4: '24px',
-        h5: '20px',
+        h5: '20px'
+      },
+      '?copyTypeScale': {
         lg: '20px',
         md: '16px',
         sm: '14px',
@@ -248,10 +250,10 @@ var config = {
         w: '100vw',
         x: '11111111px'
       }
-    },
-    variations: [[['o', ':hover'], ['o', ':focus'], ['o', ':active']], [['s', '@media(min-width:384px)'], ['m', '@media(min-width:768px)'], ['l', '@media(min-width:1024px)'], ['x', '@media(min-width:1536px)']]]
+    }
   }]
 };
+var variations = [[['o', ':hover'], ['o', ':focus'], ['o', ':active']], [['s', '@media(min-width:384px)'], ['m', '@media(min-width:768px)'], ['l', '@media(min-width:1024px)'], ['x', '@media(min-width:1536px)']]];
 var options = {
   addVariationToSelector: function addVariationToSelector(selector, variationAbbreviation) {
     return variationAbbreviation + '-' + selector;
@@ -267,5 +269,5 @@ var options = {
   }
 };
 
-export { config, options };
+export { config, options, variations };
 //# sourceMappingURL=ainsley-config-starter.esm.js.map

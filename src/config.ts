@@ -1,4 +1,4 @@
-import { Ainsley, AinsleyGenerateOptions } from 'ainsley'
+import { Ainsley, AinsleyGenerateOptions, AinsleyVariations } from 'ainsley'
 
 export const config: Ainsley = {
   children: [
@@ -13,8 +13,15 @@ export const config: Ainsley = {
         [
           'fosz',
           [
-            ['font-size', '{typeScale}'],
+            ['font-size', '{headerTypeScale}'],
             ['line-height', 1.2]
+          ]
+        ],
+        [
+          'fosz',
+          [
+            ['font-size', '{copyTypeScale}'],
+            ['line-height', 1.3]
           ]
         ],
         ['pa', [['padding', '{scale}']]],
@@ -28,10 +35,10 @@ export const config: Ainsley = {
           {
             i: 'inline',
             b: 'block',
-            fx: 'flex',
+            fl: 'flex',
             n: 'none',
             ib: 'inline-block',
-            ifx: 'inline-flex'
+            ifl: 'inline-flex'
           }
         ],
         [
@@ -169,7 +176,7 @@ export const config: Ainsley = {
             se: 'space-evenly'
           }
         ],
-        ['Line-Height', { B: 1, T: 1.2, C: 1.3 }],
+        ['Line-Height', { B: 1, H: 1.2, C: 1.3 }],
         ['FOnt-Weight', { N: 400, M: 600, B: 700 }],
         {
           variables: {
@@ -297,12 +304,14 @@ export const config: Ainsley = {
           MSG: '#3d70b2',
           LIGHTMSG: '#ebf0f7'
         },
-        '?typeScale': {
+        '?headerTypeScale': {
           h1: '72px',
           h2: '48px',
           h3: '32px',
           h4: '24px',
-          h5: '20px',
+          h5: '20px'
+        },
+        '?copyTypeScale': {
           lg: '20px',
           md: '16px',
           sm: '14px',
@@ -337,23 +346,24 @@ export const config: Ainsley = {
           w: '100vw',
           x: '11111111px'
         }
-      },
-      variations: [
-        [
-          ['o', ':hover'],
-          ['o', ':focus'],
-          ['o', ':active']
-        ],
-        [
-          ['s', '@media(min-width:384px)'],
-          ['m', '@media(min-width:768px)'],
-          ['l', '@media(min-width:1024px)'],
-          ['x', '@media(min-width:1536px)']
-        ]
-      ]
+      }
     }
   ]
 }
+
+export const variations: AinsleyVariations = [
+  [
+    ['o', ':hover'],
+    ['o', ':focus'],
+    ['o', ':active']
+  ],
+  [
+    ['s', '@media(min-width:384px)'],
+    ['m', '@media(min-width:768px)'],
+    ['l', '@media(min-width:1024px)'],
+    ['x', '@media(min-width:1536px)']
+  ]
+]
 
 export const options: Partial<AinsleyGenerateOptions> = {
   addVariationToSelector: (selector, variationAbbreviation) =>
