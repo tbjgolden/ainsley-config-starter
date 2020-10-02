@@ -363,11 +363,7 @@ export const options: Partial<AinsleyGenerateOptions> = {
   addValueToSelector: (selector, valueAbbreviation) =>
     selector + valueAbbreviation.toUpperCase(),
   abbreviateProperty: (propertyName) => [
-    propertyName
-      .split('-')
-      .map((word) => word.charAt(0))
-      .join('')
-      .toLowerCase(),
+    propertyName.replace(/[^A-Z]+/g, '').toLowerCase(),
     propertyName.toLowerCase()
   ]
 }

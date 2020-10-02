@@ -267,9 +267,7 @@ var options = {
     return selector + valueAbbreviation.toUpperCase();
   },
   abbreviateProperty: function abbreviateProperty(propertyName) {
-    return [propertyName.split('-').map(function (word) {
-      return word.charAt(0);
-    }).join('').toLowerCase(), propertyName.toLowerCase()];
+    return [propertyName.replace(/[^A-Z]+/g, '').toLowerCase(), propertyName.toLowerCase()];
   }
 };
 
